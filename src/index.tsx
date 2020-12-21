@@ -1,25 +1,29 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { HashRouter as Router, Route } from 'react-router-dom'
 import './index.module.scss'
 import App from './pages/'
 import Contact from './pages/contacts'
 import User from './pages/users'
 import reportWebVitals from './reportWebVitals'
-import { HashRouter as Router, Route } from 'react-router-dom'
+import store from 'modules/index'
+import { Provider } from 'react-redux'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router basename={process.env.PUBLIC_URL}>
-      <Route exact path="/">
-        <App />
-      </Route>
-      <Route exact path="/contacts/:id">
-        <Contact />
-      </Route>
-      <Route exact path="/users">
-        <User />
-      </Route>
-    </Router>
+    <Provider store={store}>
+      <Router basename={process.env.PUBLIC_URL}>
+        <Route exact path="/">
+          <App />
+        </Route>
+        <Route exact path="/contacts/:id">
+          <Contact />
+        </Route>
+        <Route exact path="/users">
+          <User />
+        </Route>
+      </Router>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 )
