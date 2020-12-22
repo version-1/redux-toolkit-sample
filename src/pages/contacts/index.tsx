@@ -13,6 +13,7 @@ const ContactPage = () => {
   const { pathname }: any = useLocation()
   const id = retriveId(pathname)
   const user = useSelector(createContactSelector(id || ''))
+
   return (
     <Layout>
       <h2>Contact</h2>
