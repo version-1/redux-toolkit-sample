@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 32px;
+  box-shadow: 1px 1px 1px 1px #2e2e2e30;
+}
+
+.logo {
+  white-space: nowrap;
+}
+
+.menu {
+  width: 100%;
+  ul {
+    margin: 0;
+
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+  }
+
+  li {
+    margin-right: 32px;
+  }
+}

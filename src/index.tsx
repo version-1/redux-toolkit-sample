@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { HashRouter as Router, Route } from 'react-router-dom'
-import './index.module.scss'
+import './index.scss'
 import App from './pages/'
 import Contact from './pages/contacts'
 import User from './pages/users'
