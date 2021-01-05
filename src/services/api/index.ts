@@ -1,7 +1,7 @@
 import axios, { Method, AxiosResponse } from 'axios'
 
 const client = axios.create({
-  baseURL: 'https://randomuser.me/apihoge'
+  baseURL: 'https://randomuser.me/api'
 })
 
 let defaultErrorHandler = (error: Error) => alert(error.message)
