@@ -7,8 +7,12 @@ const name = 'contactList'
 export const fetchContactList = createAsyncThunk(
   `${name}/fetchContactList`,
   async (params: any, thunkApi: any) => {
-    const res = await fetchUserList()
-    const data = res.data.results.reduce((acc: any, item: any) => {
+    const { response: res, error } = await fetchUserList()
+    if (error) {
+      alert('コンタクトリストの取得に失敗しました')
+      return {}
+    }
+    const data = res!.data.results.reduce((acc: any, item: any) => {
       const user = new User(item)
       return { ...acc, [user.id]: user }
     }, {})

@@ -8,6 +8,11 @@ import User from './pages/users'
 import reportWebVitals from './reportWebVitals'
 import store from 'modules/index'
 import { Provider } from 'react-redux'
+import { setDefaultErrorHandler } from './services/api'
+
+setDefaultErrorHandler((error: Error) => {
+  alert('予期せぬエラーが発生しました。システム管理者問い合わせてください')
+})
 
 ReactDOM.render(
   <React.StrictMode>
